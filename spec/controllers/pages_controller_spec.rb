@@ -3,6 +3,10 @@ require 'spec_helper'
 describe PagesController do
   render_views
   
+  before(:each) do
+    @base_title = "RoR Sample App"
+  end
+  
   describe "GET 'home'" do
     it "should be successful" do
       get 'home'
@@ -39,7 +43,6 @@ describe PagesController do
       get 'about'
       response.should have_selector("title",
             :content => @base_title + " | About")
-<<<<<<< HEAD
     end
    end
    
@@ -53,8 +56,6 @@ describe PagesController do
       get 'help'
       response.should have_selector("title",
             :content => @base_title + " | Help")
-=======
->>>>>>> static-pages
     end
    end
 
